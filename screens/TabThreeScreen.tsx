@@ -3,12 +3,13 @@ import { StyleSheet, FlatList } from 'react-native';
 
 import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View, ScrollView } from '../components/Themed';
+import ListItem from '../components/ListItem';
 
 export default function TabThreeScreen() {
   return (
     <FlatList
       data={[{key: 'One'}, {key: 'Two'}, {key: 'Three'}]}
-      renderItem={({item}) => <Text style={styles.flatListItem}>{item.key}</Text> }
+      renderItem={({item}) => <ListItem />}
     />
     // <ScrollView>
     //   <View style={styles.container}>
