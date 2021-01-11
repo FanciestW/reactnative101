@@ -9,7 +9,7 @@ export default function TabThreeScreen() {
   return (
     <FlatList
       data={[{key: 'One'}, {key: 'Two'}, {key: 'Three'}]}
-      renderItem={({item}) => <ListItem />}
+      renderItem={({item}) => <ListItem textContent={item.key} />}
     />
     // <ScrollView>
     //   <View style={styles.container}>
