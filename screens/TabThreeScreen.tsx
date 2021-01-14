@@ -6,11 +6,19 @@ import { Text, View, ScrollView } from '../components/Themed';
 import ListItem from '../components/ListItem';
 
 export default function TabThreeScreen() {
-  const [data, setData] = useState([{key: 'One'}, {key: 'Two'}, {key: 'Three'}]);
+  const [data, setData] = useState([{ key: 'One' }, { key: 'Two' }, { key: 'Three' }]);
+
+  const deleteFunc = (key: string) => {
+    const newData = data.filter((obj) => {
+      return obj.key !== key;
+    });
+    setData(newData);
+  };
+
   return (
     <FlatList
       data={data}
-      renderItem={({item}) => <ListItem textContent={item.key} />}
+      renderItem={({ item }) => <ListItem deleteFunc={deleteFunc} textContent={item.key} itemKey={item.key} />}
     />
     // <ScrollView>
     //   <View style={styles.container}>
@@ -40,6 +48,6 @@ const styles = StyleSheet.create({
   flatListItem: {
     padding: 10,
     fontSize: 18,
-    height: 44
-  }
+    height: 44,
+  },
 });
