@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, FlatList } from 'react-native';
 
 import EditScreenInfo from '../components/EditScreenInfo';
@@ -6,9 +6,10 @@ import { Text, View, ScrollView } from '../components/Themed';
 import ListItem from '../components/ListItem';
 
 export default function TabThreeScreen() {
+  const [data, setData] = useState([{key: 'One'}, {key: 'Two'}, {key: 'Three'}]);
   return (
     <FlatList
-      data={[{key: 'One'}, {key: 'Two'}, {key: 'Three'}]}
+      data={data}
       renderItem={({item}) => <ListItem textContent={item.key} />}
     />
     // <ScrollView>
