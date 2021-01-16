@@ -18,7 +18,7 @@ export default function TabThreeScreen() {
 
   const addToListFunc = (key: string) => {
     setData([...data, { key }]);
-    setTextBoxValue('')
+    setTextBoxValue('');
   };
 
   return (
@@ -27,12 +27,14 @@ export default function TabThreeScreen() {
         data={data}
         renderItem={({ item }) => <ListItem deleteFunc={deleteFunc} textContent={item.key} itemKey={item.key} />}
       />
-      <TextInput
-        value={textBoxValue}
-        onChangeText={(text: string) => setTextBoxValue(text)}
-        placeholder='New Cat Name'
-      />
-      <Button title='Add' onPress={() => addToListFunc(textBoxValue)} />
+      <View style={{flexDirection: 'row', alignItems: 'center'}}>
+        <TextInput
+          value={textBoxValue}
+          onChangeText={(text: string) => setTextBoxValue(text)}
+          placeholder='New Cat Name'
+        />
+        <Button title='Add' onPress={() => addToListFunc(textBoxValue)} />
+      </View>
     </>
     // <ScrollView>
     //   <View style={styles.container}>
