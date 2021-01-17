@@ -27,8 +27,14 @@ export default function TabThreeScreen() {
         data={data}
         renderItem={({ item }) => <ListItem deleteFunc={deleteFunc} textContent={item.key} itemKey={item.key} />}
       />
-      <View style={{flexDirection: 'row', alignItems: 'center'}}>
+      <View style={{ flexDirection: 'row', alignItems: 'center' }}>
         <TextInput
+          style={{
+            borderColor: 'white',
+            borderWidth: 1,
+            padding: 10,
+            borderRadius: 10,
+          }}
           value={textBoxValue}
           onChangeText={(text: string) => setTextBoxValue(text)}
           placeholder='New Cat Name'
